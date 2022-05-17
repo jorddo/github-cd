@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.11
+        with:
+          heroku_api_key: ${{secrets.b060cbbc-1322-46cc-83b2-054582ae3a3e}}
+          heroku_app_name: 'enigmatic-island-82701'
+          heroku_email: 'jordanbsneed@gmail.com'
